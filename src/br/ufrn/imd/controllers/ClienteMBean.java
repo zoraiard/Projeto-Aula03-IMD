@@ -3,6 +3,7 @@ package br.ufrn.imd.controllers;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import br.ufrn.imd.dominio.Cliente;
 
@@ -21,9 +22,8 @@ public class ClienteMBean {
 		cliente = new Cliente();		
 	}
 	
-	public String Cadastrar() {
+	public String cadastrar() {
 		 //validando se foi informado um telefone/celular para contato.
-		
 		if (cliente.getCelular().equals("")&&cliente.getTelefone().equals("")) {
 			FacesMessage msg = new FacesMessage("Para efetivar o cadastro, é necessário informar um número de telefone ou celular."); 
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);

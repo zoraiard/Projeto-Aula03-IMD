@@ -87,12 +87,10 @@ public void validarPessoa(FacesContext context, UIComponent component, Object va
     String cpf = (String) value;
     Pessoa pessoaBanco = dao.findPessoa(pessoa.getCpf());
     if(pessoaBanco != null) {
-        String msg = "Essa pessoa já existe no banco de dados.";
-        throw new ValidatorException
-       (new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
+       String msg = "Essa pessoa já existe no banco de dados.";
+       throw new ValidatorException (new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
     }
 }
-
 
 
 <h:inputText value="#{cadastroMBean.pessoa.cpf}" size="11" validator="#{cadastroMBean.validarPessoa}" />
