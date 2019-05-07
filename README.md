@@ -1,4 +1,4 @@
-#Módulo Avançado Curso: Técnico IMD
+# Módulo Avançado Curso: Técnico IMD
 
 ## Aula 03 - Validação de Campos no JSF
 
@@ -22,8 +22,7 @@ Então, o JSF possui duas formas de validação, as quais veremos mais detalhadamen
 A validação de campo obrigatório verifica se um determinado campo não está vazio durante a submissão do formulário.
 
 ```
-	<h:inputText id="nome" value="#{pessoaMBean.pessoa.nome}" title="Nome" required="true" 
-    requiredMessage="Nome: campo obrigatório!"/>
+<h:inputText id="nome" value="#{pessoaMBean.pessoa.nome}" title="Nome" required="true"               requiredMessage="Nome:  campo obrigatório!"/>
 
 ```
 
