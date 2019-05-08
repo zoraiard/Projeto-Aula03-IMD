@@ -14,24 +14,24 @@ import br.ufrn.imd.dominio.Cliente;
 
 @ManagedBean
 @SessionScoped
-public class ClienteMBean {
+public class ClienteMBean{
 
 	private Cliente cliente;
 	
-	public ClienteMBean() {		
-		cliente = new Cliente();		
+	public ClienteMBean(){		
+	   cliente = new Cliente();		
 	}
 	
 	public String cadastrar() {
-		 //validando se foi informado um telefone/celular para contato.
-		if (cliente.getCelular().equals("")&&cliente.getTelefone().equals("")) {
-			FacesMessage msg = new FacesMessage("Para efetivar o cadastro, é necessário informar um número de telefone ou celular."); 
-			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-		    FacesContext.getCurrentInstance().addMessage("", msg);
-		}else {
-		    return "/form.jsf";
-		}
-	     return "/sucesso.jsf";		
+		
+		if ( cliente.getTelefone().equals("") || cliente.getCelular().equals("") ){
+	        FacesMessage msg = new FacesMessage("Para efetivar o cadastro, é necessário informar um número de telefone ou celular.");
+	        msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage("", msg);
+	        return "/form.jsf";
+	    }
+	    
+	    return "/sucesso.jsf";
 	}
 
 	public Cliente getCliente() {
